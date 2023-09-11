@@ -1,0 +1,383 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "RedHatDisplay Light";
+  src: url("./assets/fonts/RedHatDisplay-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RedHatDisplay Regular";
+  src: url("./assets/fonts/RedHatDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RedHatDisplay Medium";
+  src: url("./assets/fonts/RedHatDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RedHatDisplay SemiBold";
+  src: url("./assets/fonts/RedHatDisplay-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RedHatDisplay Bold";
+  src: url("./assets/fonts/RedHatDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RedHatDisplay Black";
+  src: url("./assets/fonts/RedHatDisplay-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.loginBg{
+  background: linear-gradient(179.88deg, #74BFB6 0.11%, #3A5A40 50.45%), #ffffff;
+}
+
+.text-gradient {
+  background: linear-gradient(0deg, #3A5A40 6.25%, #74BFB6 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
+  > a {
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+    }
+  }
+}
+
+.home-background{
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+  .menu a {
+    color: #FFF;
+  }
+
+.is-sub-menu {
+  > a {
+    position: relative;
+    &::after {
+      content: '';
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      right: 15px;
+    }
+  }
+}
+
+.loader {
+  @apply bg-CalmWaters flex  fixed inset-0 z-50 items-center justify-center text-SpaceCadet bg-opacity-50;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.layout-menu {
+  background: #ffffff;
+  color: #000000;
+  z-index: 999; 
+}
+
+.gradient-aside {
+  background: var(--primary, linear-gradient(180deg, #74BFB6 0%, #74BFB6 0.01%, #3A5A40 100%));
+}
+
+.active-link {
+  @apply cursor-pointer text-SpaceCadet;
+  > a {
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.25);
+    background: #FFFFFF;
+    border-radius: 8px;
+    color:#000000 !important;
+  }
+  > a:hover {
+    background: #FFFFFF;
+  }
+}
+
+.submenu {
+  li.active {
+    background: white ;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.25);
+    a{
+    color:#000000 !important;
+    }
+  }
+  li {
+    cursor: pointer;
+    padding: 8px 13px;
+    margin-left: 2.5rem;
+    margin-right: 14px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    position: relative;
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    &::after {
+      width: 1px;
+      height: 113%;
+      content: '';
+      display: block;
+      background: #FFF;
+      margin: 0;
+      position: absolute;
+      left: -14px;
+      bottom: 0;
+      top: -1px;
+    }
+  }
+}
+
+.custom-date-picker {
+  .MuiInputBase-formControl {
+    border-radius: 8px !important;
+    color: #141c4c !important;
+  }
+
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-radius: 8px !important;
+  }
+  .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-radius: 8px !important;
+  }
+  .MuiOutlinedInput-notchedOutline:hover {
+    border-radius: 8px !important;
+  }
+
+  .error-state {
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: #ef4949 !important;
+      border-radius: 8px !important;
+    }
+    .MuiFormLabel-root-MuiInputLabel-root {
+      color: #ef4949 !important;
+      background-color: #404050;
+    }
+    .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+      border-color: #ef4949 !important;
+      border-radius: 8px !important;
+    }
+  }
+}
+.date-range-picker {
+  .custom-label {
+    color: #6a6a78;
+    position: relative;
+    top: 12px;
+  }
+  .toggle-label {
+    transform: translateY(-15px);
+    font-size: 10px;
+  }
+}
+
+.react-datepicker-wrapper input {
+  border: none !important;
+  color: #141c4c;
+  background-color: transparent;
+  outline: none;
+}
+
+.filters {
+  .MuiOutlinedInput-root {
+    height: 48px !important;
+  }
+  .date-range-picker {
+    height: 48px !important;
+  }
+}
+
+.date_range_filter {
+  .custom-select-input {
+    width: 200px;
+  }
+  .MuiOutlinedInput-root {
+    height: 48px !important;
+  }
+  .date-range-picker {
+    height: 48px !important;
+  }
+}
+
+.file-upload-box {
+  @apply p-3;
+  border-radius: 8px;
+  display: block;
+  justify-items: center;
+  align-items: center;
+  border: 1px dashed #e7e8ed;
+}
+.file-upload-active {
+  border: 1px dashed #F9AF2F;
+}
+
+.file-upload-error {
+  border: 1px dashed #ef4949;
+}
+
+.cancel-btn {
+  border-radius: 8px;
+  border: 1px solid #ef4949;
+  font-size: 12px;
+  color: #ef4949;
+  padding: 8px 22px;
+}
+
+.default_container {
+  @apply border-DreamyCloud border rounded-lg p-3 sm:p-6;
+}
+
+.subheading {
+  @apply text-base sm:text-lg  sm:py-2 font-bold text-SpaceCadet font-redHatDisplayBold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.seconday-heading {
+  @apply text-primarBtn text-base font-semibold;
+}
+
+.w-inherit {
+  width: inherit !important;
+}
+.MuiPaper-root-MuiAccordion-root:before {
+  height: 0 !important;
+}
+.MuiAccordionSummary-root.Mui-expanded {
+  min-height: 48px !important;
+}
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+.rdw-editor-main {
+  border: 1px solid #404050;
+  padding-left: 10px;
+  border-radius: 8px;
+  min-height: 130px;
+  max-height: 100%;
+}
+
+#collapsiveTable .MuiTableCell-head {
+  line-height: 14px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.debug {
+  @apply border border-red-800;
+}
+
+.apexcharts-tooltip {
+  background: #141c4c !important;
+}
+
+.arrow_box {
+  padding: 10px;
+  position: relative;
+  background: #141c4c !important;
+}
+.break-word-all{
+  word-break: break-word;
+}
+
+.react-datepicker-popper {  z-index: 3 !important }
+.react-datepicker {  z-index: 3 !important }
+
+
+.emoji-404{
+
+  position: relative;
+  animation: mymove 2.5s infinite;
+}
+
+@keyframes mymove {
+  33%   {top: 0px;}
+  66%  {top: 20px;}
+  100%  {top: 0px}
+}
+
+.disable-action{
+  opacity: .35;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.dashboardAnalylitics {
+  &:hover {
+      background: #07283B;
+      box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.2);
+      > div {
+          background: #F9AF2F;
+          box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.2);
+          > .cards-img {
+              display: none;
+          }
+          > .cards-p {
+              display: block;
+          }
+      }
+      > p {
+          color: #ffffff;
+      }
+  }
+}
+
+.chipBg{
+  border-radius: 8px;
+background: rgba(58, 196, 48, 0.15);
+}
+
+.chipBgRed{
+  border-radius: 8px;
+  background: rgba(255, 0, 0, 0.15);
+}
+
+.MuiListItemText-root{
+  fontFamily: "RedHatDisplay Medium";
+}
+
+
+.tabHeadingTitle{
+  background: var(--primary, linear-gradient(180deg, #74BFB6 0%, #74BFB6 0.01%, #3A5A40 100%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
