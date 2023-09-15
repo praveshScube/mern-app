@@ -34,6 +34,9 @@ import menuOpenClose from "../assets/images/menuOpenClose.svg";
 
 import Features from "../components/Pages/Features/Features";
 import AllComponents from "../components/Pages/AllComponents/AllComponents";
+import AllComponents2 from "../components/Pages/AllComponents2.tsx/AllComponents2";
+import AllComponents3 from "../components/Pages/AllComponents/AllComponents3/AllComponents3";
+import Test from "../components/Pages/Test/Test";
 
 type Children = {
     children: any;
@@ -116,7 +119,7 @@ const PrivateRoute = ({ children, module }: PrivateRouteProps) => {
     const { pathname } = location;
     const splitLocation = pathname.split("/");
 
-    console.log(pathname, 'pathname')
+    console.log(pathname, "pathname");
 
     const SYSTEM_ROUTES = [
         {
@@ -129,6 +132,33 @@ const PrivateRoute = ({ children, module }: PrivateRouteProps) => {
             module: "components",
         },
         {
+            name: "Components2",
+            icon: leadimage,
+            active_icon: leadsActive,
+            sub_menus: [],
+            index: 1,
+            url: "/components2",
+            module: "components2",
+        },
+        {
+            name: "Components3",
+            icon: leadimage,
+            active_icon: leadsActive,
+            sub_menus: [],
+            index: 1,
+            url: "/components3",
+            module: "components3",
+        },
+        {
+            name: "Test",
+            icon: leadimage,
+            active_icon: leadsActive,
+            sub_menus: [],
+            index: 1,
+            url: "/test",
+            module: "test",
+        },
+        {
             name: "Features",
             icon: settings,
             active_icon: settingsActive,
@@ -137,7 +167,6 @@ const PrivateRoute = ({ children, module }: PrivateRouteProps) => {
             url: "/features",
             module: "features",
         },
-        
     ];
 
     const ROUTES = SYSTEM_ROUTES;
@@ -161,7 +190,7 @@ const PrivateRoute = ({ children, module }: PrivateRouteProps) => {
                     }`}
                 >
                     <span className="flex  gap-6 p-2 text-xl font-semibold leading-8 tracking-wider uppercase whitespace-nowrap">
-                        {isSidebarOpen ? (
+                        {/* {isSidebarOpen ? (
                             <img
                                 src={duvetLogoOpen}
                                 alt="all_logos"
@@ -169,7 +198,7 @@ const PrivateRoute = ({ children, module }: PrivateRouteProps) => {
                             />
                         ) : (
                             <img src={DuvetLogo} alt="logo" />
-                        )}
+                        )} */}
                     </span>
                     <button
                         type="button"
@@ -417,6 +446,33 @@ export const Layout = () => (
                 />
 
                 <Route
+                    path="/components2"
+                    element={
+                        <PrivateRoute module="">
+                            <AllComponents2 />
+                        </PrivateRoute>
+                    }
+                />
+
+                <Route
+                    path="/components3"
+                    element={
+                        <PrivateRoute module="">
+                            <AllComponents3 />
+                        </PrivateRoute>
+                    }
+                />
+
+                <Route
+                    path="/test"
+                    element={
+                        <PrivateRoute module="">
+                            <Test />
+                        </PrivateRoute>
+                    }
+                />
+
+                <Route
                     path="/features"
                     element={
                         <PrivateRoute module="">
@@ -424,8 +480,6 @@ export const Layout = () => (
                         </PrivateRoute>
                     }
                 />
-
-                
 
                 <Route path="*" element={<NotFound />} />
                 <Route path="un-authorized" element={<UnAuthorizedAccess />} />

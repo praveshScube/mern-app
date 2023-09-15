@@ -110,7 +110,7 @@ body {
 }
 
 .gradient-aside {
-  background: var(--primary, linear-gradient(180deg, #74BFB6 0%, #74BFB6 0.01%, #3A5A40 100%));
+  background: var(--primary, linear-gradient(180deg, #ac5ac8 0%, #ac5ac8 0.01%, #421f93 100%));
 }
 
 .active-link {
@@ -232,7 +232,6 @@ body {
 }
 
 .file-upload-box {
-  @apply p-3;
   border-radius: 8px;
   display: block;
   justify-items: center;
@@ -380,4 +379,30 @@ background: rgba(58, 196, 48, 0.15);
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+.list-item{
+  display:flex;
+  align-items: center;
+  background-color: transparent;
+  padding:0px 20px;
+  margin-top:15px;
+  cursor:move;
+  transition: all .2s ease-in-out;
+
+}
+.list-item:hover{
+  scale:1.01;
+}
+h3{
+  font-size: 30px;
+}
+.container-sort__items {
+  border: 0.5px solid grey;
+  min-height: 200px;
 }
